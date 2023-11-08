@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyA5RzLtVaX709wa0SRm-zVE1Wkrl5_hDWA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>753867904307</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Ovanes.FirebaseAuthentication</string>
+	<key>PROJECT_ID</key>
+	<string>fir-authentication-63466</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-authentication-63466.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:753867904307:ios:60cfe731fbf1988d519a46</string>
+</dict>
+</plist>
