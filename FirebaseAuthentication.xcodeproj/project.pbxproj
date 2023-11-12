@@ -30,6 +30,7 @@
 		4E9E128E2AFD412200135588 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4E9E128D2AFD412200135588 /* GoogleService-Info.plist */; };
 		4E9E12912AFD42BC00135588 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9E12902AFD42BC00135588 /* Utilities.swift */; };
 		4E9E12932AFD485A00135588 /* SignInGoogleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9E12922AFD485A00135588 /* SignInGoogleHelper.swift */; };
+		4E9E12952B011BDD00135588 /* SignInAppleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9E12942B011BDD00135588 /* SignInAppleHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		4E9E128D2AFD412200135588 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4E9E12902AFD42BC00135588 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		4E9E12922AFD485A00135588 /* SignInGoogleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInGoogleHelper.swift; sourceTree = "<group>"; };
+		4E9E12942B011BDD00135588 /* SignInAppleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				4E9E127D2AFBFE9700135588 /* AuthenticationView.swift */,
 				4E9E127F2AFBFFC900135588 /* SignInEmailView.swift */,
 				4E9E12922AFD485A00135588 /* SignInGoogleHelper.swift */,
+				4E9E12942B011BDD00135588 /* SignInAppleHelper.swift */,
 				4E9E12812AFC013F00135588 /* AuthenticationManager.swift */,
 				4E9E12852AFC07E400135588 /* SettingView.swift */,
 			);
@@ -338,6 +341,7 @@
 				4E9E127E2AFBFE9700135588 /* AuthenticationView.swift in Sources */,
 				4E9E12822AFC013F00135588 /* AuthenticationManager.swift in Sources */,
 				4E9E12912AFD42BC00135588 /* Utilities.swift in Sources */,
+				4E9E12952B011BDD00135588 /* SignInAppleHelper.swift in Sources */,
 				4E9E12802AFBFFC900135588 /* SignInEmailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
