@@ -12,11 +12,17 @@ import SwiftUI
 final class SettingsViewModel: ObservableObject {
     
     @Published var authProviders: [AuthProviderOption] = []
+    @Published var authUser: AuthDataResultModel? = nil
+
     
     func loadAuthProviders() {
         if let providers = try? AuthenticationManager.shared.getProviders() {
             authProviders = providers
         }
+    }
+    
+    func loadAuthUser() {
+        self.authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
     }
     
     func signOut() throws {
@@ -40,6 +46,24 @@ final class SettingsViewModel: ObservableObject {
     func updatePassword() async throws {
         let password = "111111"
         try await AuthenticationManager.shared.updateEmail(email: password)
+    }
+    
+    func linkGoogleAccount() async throws {
+        let helper = SignInGoogleHelper()
+        let tokens = try await helper.signIn()
+        self.authUser = try await AuthenticationManager.shared.linkGoogle(tokens: tokens)
+    }
+    
+    func linkAppleAccount() async throws {
+        let helper = SignInAppleHelper()
+        let tokens = try await helper.startSignInWithAppleFlow()
+        self.authUser = try await AuthenticationManager.shared.linkApple(tokens: tokens)
+    }
+    
+    func linkEmailAccount() async throws {
+        let email = "test@google.com"
+        let password = "111111"
+        self.authUser = try await AuthenticationManager.shared.linkEmail(email: email, password: password)
     }
     
 }
@@ -69,12 +93,16 @@ struct SettingView: View {
                 emailSection
             }
             
+            if viewModel.authUser?.isAnonymous == true {
+                anonymousSection
+            }
 
             
             
         }
         .onAppear {
             viewModel.loadAuthProviders()
+            viewModel.loadAuthUser()
         }
         .navigationTitle("Settings")
     }
@@ -126,6 +154,45 @@ extension SettingView {
             }
         } header: {
             Text("Функции электронной почты")
+        }
+    }
+    
+    private var anonymousSection: some View {
+        Section {
+            Button("Связать с аккаунтом Google") {
+                Task {
+                    do {
+                        try await viewModel.linkGoogleAccount()
+                        print("Link Google!")
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+            
+            Button("Связать с аккаунтом Apple") {
+                Task {
+                    do {
+                        try await viewModel.linkAppleAccount()
+                        print("Link Apple!")
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+            
+            Button("Связать с аккаунтом Email") {
+                Task {
+                    do {
+                        try await viewModel.linkEmailAccount()
+                        print("Link Email!")
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+        } header: {
+            Text("Связать анонимный аккаунт с ")
         }
     }
 }
